@@ -1,0 +1,7 @@
+---
+name: "tiller"
+version: "0.1.0"
+usage: "helpers for managing tiller"
+description: "Helpers for working with in-cluster tiller."
+useTunnel: true
+command: "$HELM_PLUGIN_DIR/tiller.sh"

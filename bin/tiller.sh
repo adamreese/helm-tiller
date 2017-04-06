@@ -36,6 +36,8 @@ logs() {
 
 destroy() {
   kubectl -n "${TILLER_NAMESPACE}" delete deployment tiller-deploy
+  kubectl -n "${TILLER_NAMESPACE}" delete service tiller-deploy
+  kubectl -n "${TILLER_NAMESPACE}" delete secret tiller-secret 2>/dev/null || :
 }
 
 cmd="${1:-}"

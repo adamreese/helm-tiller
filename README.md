@@ -15,4 +15,7 @@ Available Commands:
 
 ## Install
 
-`make install`
+```
+$ helm plugin install https://github.com/adamreese/helm-tiller
+Installed plugin: tiller
+```

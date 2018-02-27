@@ -1,14 +1,10 @@
-HELM_HOME ?= $(helm home)
-HELM_HOME := ${HOME}/.helm
+PLUGIN_NAME := helm-tiller
+REMOTE      := https://github.com/adamreese/$(PLUGIN_NAME)
 
 .PHONY: install
 install:
-	cp -a . $(HELM_HOME)/plugins/helm-tiller
+	helm plugin install $(REMOTE)
 
 .PHONY: link
 link:
-	ln -s ${PWD} $(HELM_HOME)/plugins/helm-tiller
-
-.PHONY: unlink
-unlink:
-	unlink $(HELM_HOME)/plugins/helm-tiller
+	helm plugin install .
